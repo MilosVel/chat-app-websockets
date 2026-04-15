@@ -1,4 +1,4 @@
-This app can works with WebSockets or Socket.IO. Files that need to be changed are:
+This app can work with either WebSockets or Socket.IO. To switch between versions, you only need to change and properly comment/uncomment code in the following files:
 
 1. server.js
 2. appContext.js
