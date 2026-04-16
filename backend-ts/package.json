@@ -1,0 +1,61 @@
+{
+  "name": "backend-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx --watch --env-file .env.development src/index.ts",
+    "dev:staging": "tsx --watch --env-file .env.staging src/index.ts",
+    "dev:prod": "tsx --watch --env-file .env.production src/index.ts",
+    "start": "node --env-file .env dist/index.js",
+    "build": "tsc -p tsconfig.build.json",
+    "build2": "tsc",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test2": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
+    "test:run": "vitest --run",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage",
+    "prepare": "husky"
+  },
+  "imports": {
+    "#*": "./src/*"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "@vitest/coverage-v8": "^4.1.4",
+    "@vitest/eslint-plugin": "^1.6.16",
+    "eslint": "^9.39.4",
+    "eslint-plugin-perfectionist": "^5.8.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vitest": "^4.1.4"
+  }
+}
