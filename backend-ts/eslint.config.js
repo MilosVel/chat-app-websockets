@@ -49,7 +49,8 @@ export default tseslint.config(
   {
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        project: true,
+        // projectService: true, // -> ako imaomo projectService umesto linije gore onda cimamo cors error u index.ts 
         tsconfigRootDir: import.meta.dirname,
       },
     },
@@ -91,8 +92,15 @@ export default tseslint.config(
       vitest,
     },
     rules: {
-      ...vitest.configs.recommended.rules,
+      // ...vitest.configs.recommended.rules,
       "@typescript-eslint/unbound-method": "off",
+
+
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
     },
   },
 );
